@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.js'),
@@ -11,6 +12,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'template.html'),
             filename: 'index.html',
+        }),
+        new FileManagerPlugin({
+            events: {
+                onStart: {
+                    delete: ['dist'],
+                },
+            },
         }),
     ],
     devServer: {
