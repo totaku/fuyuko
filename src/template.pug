@@ -4,8 +4,10 @@ html(lang= 'ru')
         meta(charset='utf-8')
         title= 'Быстрый запуск Webpack'
     body
-        p Файл откомпилирован шаблонизатором Pug
+        p Файл откомпилирован шаблонизатором Pug dsd
         .logo-png
             img.logo1(src=require('./images/image.png') alt='Загрузка PNG изображений с помощью Webpack')
         .logo-svg
             img.logo2(src=require('./images/logo.svg'), alt='Загрузка SVG изображений с помощью Webpack')
+
+        include:markdown-it content/article.md
